@@ -1,16 +1,23 @@
-// creazione numero random
+// richiamo elemento della lista numeri
 let numberRandom = document.getElementById('numbers-list');
-numberRandom = Math.floor(Math.random() *50)+ 1;
 
-// visualizzazione in console del numero random
-console.log(numberRandom);
+//  creazione array vuoto per  numeri random
+const randomNumbers = []; 
 
-const listaNumeri = document.getElementById('numbers-list');
+// Genera un numero random
 
-const randomNumbers = Array.from({ length: 5 }, () => Math.floor(Math.random() * 50) + 1);
-console.log(randomNumbers);
+for (let i = 0; i < 5; i++) {
+  const genNumberRandom = Math.floor(Math.random() * 50) + 1; 
+
+  // Aggiungi il numero random all'array vuoto
+  randomNumbers.push(genNumberRandom); 
+}
+
+// mostra l'array in console
+console.log(randomNumbers); 
 
 // visualizzazione in pagina
+const listaNumeri = document.getElementById('numbers-list');
 listaNumeri.innerText = randomNumbers;
 
 // Da lì parte un timer di 30 secondi. 
