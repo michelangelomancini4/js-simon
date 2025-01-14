@@ -1,20 +1,26 @@
 // richiamo elemento della lista numeri
 let numberRandom = document.getElementById('numbers-list');
-
-//  creazione array vuoto per  numeri random
-const randomNumbers = []; 
-
-// Genera un numero random
+const randomNumbers = []; // Crea un array vuoto
 
 for (let i = 0; i < 5; i++) {
-  const genNumberRandom = Math.floor(Math.random() * 50) + 1; 
 
-  // Aggiungi il numero random all'array vuoto
-  randomNumbers.push(genNumberRandom); 
+    // Genero un numero random
+  let numberRandom = Math.floor(Math.random() * 50) + 1; 
+
+  // Controllo se il numero è già presente nell'array
+  if (randomNumbers.includes(numberRandom)) {
+
+    // tolgo eventuale numero duplicato
+    i=i-1; 
+  } 
+   else {
+
+    // Aggiungo il numero all'array vuoto
+    randomNumbers.push(numberRandom); 
+  }
 }
 
-// mostra l'array in console
-console.log(randomNumbers); 
+console.log(randomNumbers); // Mostra l'array con i numeri generati
 
 // visualizzazione in pagina
 const listaNumeri = document.getElementById('numbers-list');
